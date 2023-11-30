@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main class="container">
+		<div class="identity">
+			<section class="name_title">
+				<h1 class="name">Kalwabed Rizki</h1>
+				<p>Software engineer, web</p>
+			</section>
+			<img src="https://github.com/kalwabed.png" class="my_pic" width="50" height="50" />
+		</div>
+	</main>
+</Layout>
+
+<style>
+.container {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding-top: 2rem;
+}
+
+.name {
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.identity {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.my_pic {
+	border-radius: 999px;
+}
+</style>
