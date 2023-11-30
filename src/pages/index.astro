@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Kalwabed Rizki | Software engineer">
   <main class="container">
     <div class="identity">
       <section class="name_title">
@@ -11,6 +11,7 @@ import Layout from "../layouts/Layout.astro";
       </section>
       <img
         src="https://github.com/kalwabed.png"
+        alt="My picture"
         class="my_pic"
         width="50"
         height="50"
@@ -31,8 +32,13 @@ import Layout from "../layouts/Layout.astro";
     font-weight: bold;
   }
 
+  .name_title {
+    text-align: center;
+  }
+
   .identity {
     display: flex;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -40,5 +46,22 @@ import Layout from "../layouts/Layout.astro";
 
   .my_pic {
     border-radius: 999px;
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (min-width: 768px) {
+    .name_title {
+      text-align: start;
+    }
+
+    .identity {
+      flex-direction: row;
+    }
+
+    .my_pic {
+      width: 50px;
+      height: 50px;
+    }
   }
 </style>
