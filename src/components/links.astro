@@ -20,13 +20,13 @@ const links = [
 <div class="grid">
   {
     links.map((link) => (
-      <section class="card">
+      <a href={link.url} rel="noopener noreferrer" target="_blank" class="card">
         <div class="card-logo">
           <Image src={ig} alt="Instagram" width={50} height={50} />
         </div>
         <h2 class="card-title">{link.label}</h2>
         <p>@kalwabed</p>
-      </section>
+      </a>
     ))
   }
 </div>
@@ -46,6 +46,11 @@ const links = [
     width: 100%;
     display: flex;
     flex-direction: column;
+    transition: all ease-out 300ms;
+  }
+
+  .card:hover {
+    transform: scale(0.95);
   }
 
   .card p {
@@ -56,7 +61,7 @@ const links = [
   .card-logo {
     position: relative;
     width: 100%;
-    height: 120px;
+    height: 125px;
     border-radius: 4px;
     background-image: linear-gradient(
       43deg,
@@ -69,7 +74,7 @@ const links = [
   .card-logo img {
     position: absolute;
     left: 58px;
-    top: 32px;
+    top: 38px;
   }
 
   .card-title {
@@ -86,8 +91,8 @@ const links = [
     }
 
     .card-logo img {
-      left: 135px;
-      top: 35px;
+      left: 140px;
+      top: 40px;
     }
   }
 </style>
