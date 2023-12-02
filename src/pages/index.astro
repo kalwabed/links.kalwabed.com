@@ -1,29 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/default.astro";
+import Links from "../components/links.astro";
+import Footer from "../components/footer.astro";
 ---
 
 <Layout title="Kalwabed Rizki | Software engineer">
   <main class="container">
     <div class="identity">
-      <section class="name_title">
+      <section class="name-title">
         <h1 class="name">Kalwabed Rizki</h1>
         <p>Software engineer, web</p>
       </section>
       <img
         src="https://github.com/kalwabed.png"
         alt="My picture"
-        class="my_pic"
+        class="my-pic"
         width="50"
         height="50"
       />
     </div>
+    <Links />
   </main>
+  <Footer />
 </Layout>
 
 <style>
   .container {
     max-width: 1024px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     padding-top: 2rem;
   }
 
@@ -32,7 +37,7 @@ import Layout from "../layouts/Layout.astro";
     font-weight: bold;
   }
 
-  .name_title {
+  .name-title {
     text-align: center;
   }
 
@@ -44,14 +49,18 @@ import Layout from "../layouts/Layout.astro";
     width: 100%;
   }
 
-  .my_pic {
+  .my-pic {
     border-radius: 999px;
     width: 80px;
     height: 80px;
   }
 
   @media (min-width: 768px) {
-    .name_title {
+    .container {
+      margin: 0 auto;
+    }
+
+    .name-title {
       text-align: start;
     }
 
@@ -59,7 +68,7 @@ import Layout from "../layouts/Layout.astro";
       flex-direction: row;
     }
 
-    .my_pic {
+    .my-pic {
       width: 50px;
       height: 50px;
     }
