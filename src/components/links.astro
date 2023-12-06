@@ -9,6 +9,16 @@ import pena from "@assets/pena.svg";
 
 const links = [
   {
+    label: "Personal website",
+    url: "https://www.kalwabed.xyz",
+    asset: web,
+  },
+  {
+    label: "Pena",
+    url: "https://pena.kalwabed.xyz",
+    asset: pena,
+  },
+  {
     label: "Instagram",
     url: "https://www.instagram.com/kalwabed",
     asset: ig,
@@ -27,16 +37,6 @@ const links = [
     label: "X",
     url: "https://twitter.com/kalwabedrzk",
     asset: twitter,
-  },
-  {
-    label: "Personal website",
-    url: "https://www.kalwabed.xyz",
-    asset: web,
-  },
-  {
-    label: "Pena",
-    url: "https://pena.kalwabed.xyz",
-    asset: pena,
   },
 ];
 
@@ -69,12 +69,12 @@ function urlLabel(url: string) {
 <style>
   .grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     width: 100%;
     margin: 2.5rem 0;
     padding: 0 1rem;
     column-gap: 25px;
-    row-gap: 24px;
+    row-gap: 15px;
   }
 
   .card {

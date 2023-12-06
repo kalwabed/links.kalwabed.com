@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.3.1",
-    "astro": "^3.6.4",
+    "@fontsource/overpass": "^5.0.15",
+    "astro": "^4.0.2",
     "typescript": "^5.3.2"
   },
   "devDependencies": {
