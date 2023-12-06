@@ -5,7 +5,10 @@ import { defineConfig, squooshImageService } from "astro/config";
 export default defineConfig({
   site: 'https://links.kalwabed.xyz',
   image: {
-    service: squooshImageService()
+    service: squooshImageService(),
+    domains: [
+      'github.com'
+    ]
   },
   integrations: [sitemap()]
 });
