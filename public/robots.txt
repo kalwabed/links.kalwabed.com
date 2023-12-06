@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://links.kalwabed.xyz/sitemap-index.xml
