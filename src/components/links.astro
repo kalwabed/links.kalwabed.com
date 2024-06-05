@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import ig from "@assets/instagram.svg";
 import gh from "@assets/github.svg";
 import linkedin from "@assets/linkedin.svg";
@@ -8,6 +7,8 @@ import web from "@assets/web.svg";
 import pena from "@assets/pena.svg";
 import goodreads from "@assets/goodreads.svg";
 import telegram from "@assets/telegram.svg";
+import CardLink from "@components/card-link.astro";
+import GridContainer from "@components/grid-container.astro";
 
 const links = [
   {
@@ -51,84 +52,8 @@ const links = [
     asset: goodreads,
   },
 ];
-
-function urlLabel(url: string) {
-  const withoutProtocol = url.replace(/^https?:\/\//, "");
-  const label = withoutProtocol.replace(/^www\./, "");
-  return label;
-}
 ---
 
-<div class="grid">
-  {
-    links.map((link) => (
-      <a href={link.url} rel="noopener noreferrer" target="_blank" class="card">
-        <div class="card-head">
-          <Image
-            src={link.asset}
-            alt={`${link.label} logo`}
-            width={30}
-            height={30}
-          />
-          <h2 class="card-title">{link.label}</h2>
-        </div>
-        <p>{urlLabel(link.url)}</p>
-      </a>
-    ))
-  }
-</div>
-
-<style>
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    width: 100%;
-    margin: 2.5rem 0;
-    padding: 0 1rem;
-    column-gap: 25px;
-    row-gap: 15px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    transition: all ease-out 300ms;
-    background-color: #abd1c6;
-    border: 2px solid #001e1d;
-    border-radius: 4px;
-  }
-
-  .card:hover {
-    transform: scale(0.95);
-  }
-
-  .card-head {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .card p {
-    margin-top: 0.3rem;
-    color: #001e1d;
-  }
-
-  .card-title {
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    color: #001e1d;
-  }
-
-  @media (min-width: 768px) {
-    .grid {
-      padding: 0;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card-logo img {
-      left: 140px;
-      top: 40px;
-    }
-  }
-</style>
+<GridContainer>
+  {links.map((link) => <CardLink {...link} />)}
+</GridContainer>

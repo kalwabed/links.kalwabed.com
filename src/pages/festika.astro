@@ -1,0 +1,22 @@
+---
+import Layout from "@layouts/default.astro";
+import GridContainer from "@components/grid-container.astro";
+import CardLink from "@components/card-link.astro";
+
+const links = [
+  {
+    label: "Github Repo Festika",
+    url: "https://github.com/kalwabed/festika-workshop-2024",
+  },
+  {
+    label: "Slides",
+    url: "https://www.canva.com/design/DAGHCRgCMrU/4fecraJfacqrol-Zy2PAew/edit",
+  },
+];
+---
+
+<Layout title="Festika Fullstack Dev Workshop 2024 | by Kalwabed Rizki">
+  <GridContainer>
+    {links.map((link) => <CardLink {...link} />)}
+  </GridContainer>
+</Layout>

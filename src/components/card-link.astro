@@ -1,0 +1,70 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+export interface Props {
+  url: string;
+  asset?: ImageMetadata;
+  label: string;
+}
+
+const { url, asset, label } = Astro.props;
+
+function urlLabel() {
+  const withoutProtocol = url.replace(/^https?:\/\//, "");
+  const label = withoutProtocol.replace(/^www\./, "");
+  return label;
+}
+---
+
+<a href={url} rel="noopener noreferrer" target="_blank" class="card">
+  <div class="card-head">
+    {
+      asset ? (
+        <Image src={asset} alt={`${label} logo`} width={30} height={30} />
+      ) : null
+    }
+    <h2 class="card-title">{label}</h2>
+  </div>
+  <p>{urlLabel()}</p>
+</a>
+
+<style>
+  .card {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    transition: all ease-out 300ms;
+    background-color: #abd1c6;
+    border: 2px solid #001e1d;
+    border-radius: 4px;
+  }
+
+  .card:hover {
+    transform: scale(0.95);
+  }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .card p {
+    margin-top: 0.3rem;
+    color: #001e1d;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #001e1d;
+  }
+
+  @media (min-width: 768px) {
+    .card-logo img {
+      left: 140px;
+      top: 40px;
+    }
+  }
+</style>
