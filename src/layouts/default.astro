@@ -3,6 +3,9 @@ import "@fontsource/overpass/latin-400.css";
 import "@fontsource/overpass/latin-600.css";
 import "@fontsource/overpass/latin-700.css";
 import "@styles/tailwind-reset.css";
+import { Image } from "astro:assets";
+import EmailMe from "@components/email-me.astro";
+import Footer from "@components/footer.astro";
 
 interface Props {
   title: string;
@@ -37,7 +40,24 @@ const { title } = Astro.props;
   </head>
   <body>
     <div id="root">
-      <slot />
+      <main class="container">
+        <div class="identity">
+          <section class="name-title">
+            <h1 class="name">Kalwabed Rizki</h1>
+            <p>Software engineer, web</p>
+          </section>
+          <Image
+            src="https://github.com/kalwabed.png"
+            alt="A man with a smiling face"
+            class="my-pic"
+            width="280"
+            height="280"
+          />
+        </div>
+        <slot />
+        <EmailMe />
+      </main>
+      <Footer />
     </div>
   </body>
 </html>
@@ -71,5 +91,56 @@ const { title } = Astro.props;
   h4,
   h5 {
     color: var(--heading-sense);
+  }
+</style>
+
+<style>
+  .container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0;
+    padding-top: 2rem;
+  }
+
+  .name {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .name-title {
+    text-align: center;
+  }
+
+  .identity {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .my-pic {
+    border-radius: 999px;
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      margin: 0 auto;
+    }
+
+    .name-title {
+      text-align: start;
+    }
+
+    .identity {
+      flex-direction: row;
+    }
+
+    .my-pic {
+      width: 50px;
+      height: 50px;
+    }
   }
 </style>
