@@ -1,14 +1,8 @@
 import sitemap from "@astrojs/sitemap";
-import { defineConfig, squooshImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://links.kalwabed.xyz',
-  image: {
-    service: squooshImageService(),
-    domains: [
-      'github.com'
-    ]
-  },
-  integrations: [sitemap()]
+  site: "https://links.kalwabed.com",
+  integrations: [sitemap()],
 });
