@@ -21,7 +21,14 @@ function urlLabel() {
   <div class="card-head">
     {
       asset ? (
-        <Image src={asset} alt={`${label} logo`} width={30} height={30} />
+        <Image
+          src={asset}
+          alt={`${label} logo`}
+          loading="eager"
+          decoding="async"
+          width={30}
+          height={30}
+        />
       ) : null
     }
     <h2 class="card-title">{label}</h2>
